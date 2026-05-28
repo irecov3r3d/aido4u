@@ -45,7 +45,7 @@ export const getStrategicHint = async (
 
   if (!ai) {
     return {
-        hint: { message: "API Key missing." },
+        hint: { message: "API Key missing.", rationale: "Cannot connect to AI without API Key." },
         debug: { ...debug, error: "API Key Missing" }
     };
   }

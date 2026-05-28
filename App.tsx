@@ -22,7 +22,12 @@ const App: React.FC = () => {
       <div className={`${isSidebarOpen ? 'w-64' : 'w-0'} transition-all duration-300 bg-black/40 backdrop-blur-xl border-r border-white/10`}>
         {isSidebarOpen && <Sidebar currentMode={mode} setMode={setMode} />}
       </div>
-      <button onClick={() => setIsSidebarOpen(!isSidebarOpen)} className="absolute top-4 left-4 z-50 p-2 bg-white/10 rounded-lg hover:bg-white/20">
+      <button
+        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+        aria-label={isSidebarOpen ? "Close sidebar" : "Open sidebar"}
+        title={isSidebarOpen ? "Close sidebar" : "Open sidebar"}
+        className="absolute top-4 left-4 z-50 p-2 bg-white/10 rounded-lg hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-white focus:outline-none transition-colors"
+      >
         {isSidebarOpen ? <PanelLeftClose /> : <PanelLeftOpen />}
       </button>
 
@@ -37,7 +42,12 @@ const App: React.FC = () => {
         <div className={`${isChatOpen ? 'w-1/3' : 'w-0'} transition-all duration-300`}>
           {isChatOpen && <UnifiedChat />}
         </div>
-        <button onClick={() => setIsChatOpen(!isChatOpen)} className="absolute top-4 right-4 z-50 p-2 bg-white/10 rounded-lg hover:bg-white/20">
+        <button
+          onClick={() => setIsChatOpen(!isChatOpen)}
+          aria-label={isChatOpen ? "Close chat panel" : "Open chat panel"}
+          title={isChatOpen ? "Close chat panel" : "Open chat panel"}
+          className="absolute top-4 right-4 z-50 p-2 bg-white/10 rounded-lg hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-white focus:outline-none transition-colors"
+        >
           {isChatOpen ? <PanelRightClose /> : <PanelRightOpen />}
         </button>
       </main>

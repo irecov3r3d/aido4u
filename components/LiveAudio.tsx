@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { GoogleGenAI, Modality, LiveServerMessage } from '@google/genai';
-import { Mic, MicOff, Loader2, Volume2, Waveform } from 'lucide-react';
+import { Mic, MicOff, Loader2, Volume2 } from 'lucide-react';
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 

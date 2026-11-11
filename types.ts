@@ -12,3 +12,26 @@ export interface Message {
   audioUrl?: string;
   isThinking?: boolean;
 }
+
+export interface StrategicHint {
+  message: string;
+  rationale: string;
+  targetRow?: number;
+  targetCol?: number;
+  recommendedColor?: string;
+}
+
+export interface DebugInfo {
+  latency: number;
+  screenshotBase64: string;
+  promptContext: string;
+  rawResponse: string;
+  timestamp: string;
+  parsedResponse?: any;
+  error?: string;
+}
+
+export interface AiResponse {
+  hint: StrategicHint;
+  debug: DebugInfo;
+}
